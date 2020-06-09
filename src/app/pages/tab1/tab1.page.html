@@ -1,0 +1,44 @@
+<app-nav-bar title="Gastos"></app-nav-bar>
+
+<ion-content [fullscreen]="true">
+    <ion-slides *ngIf="_sg.gastos.length == 0" [options]="sliderOptions">
+        <ion-slide>
+            <h1>No hay gastos guardados</h1>
+        </ion-slide>
+    </ion-slides>
+
+    <ion-grid fixed *ngIf="_sg.gastos.length > 0">
+        <ion-row>
+            <ion-col *ngFor="let gasto of _sg.gastos; let i = index" size="12" size-lg="6" size-md="6">
+                <ion-list>
+                    <ion-item-divider>
+                        <ion-label>
+                            <h3>Gasto {{ i + 1 }}</h3>
+                        </ion-label>
+                        <ion-icon (click)="action( gasto.id )" name="add-outline" slot="end"></ion-icon>
+                    </ion-item-divider>
+
+                    <ion-item>
+                        <ion-label>Ondometro:</ion-label>
+                        <ion-label>{{ gasto.ondometro }}</ion-label>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Precio/l:</ion-label>
+                        <ion-label>{{ gasto.precio_l }}</ion-label>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>total de conbustible:</ion-label>
+                        <ion-label>{{ gasto.total_c}}</ion-label>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Costo total:</ion-label>
+                        <ion-label>{{ gasto.costo_t }}</ion-label>
+                    </ion-item>
+                </ion-list>
+
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

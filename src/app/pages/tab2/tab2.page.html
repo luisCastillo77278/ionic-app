@@ -1,0 +1,37 @@
+<app-nav-bar title="Registrar gasto"></app-nav-bar>
+
+<ion-content [fullscreen]="true">
+
+    <ion-grid fixed>
+        <ion-row>
+            <form>
+                <ion-col>
+                    <ion-item>
+                        <ion-input required placeholder="ondometro" name="ondometro" [(ngModel)]="gasto.ondometro">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-input required placeholder="precio/L" name="precio_l" [(ngModel)]="gasto.precio_l">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-input required placeholder="Total de combustible" name="total_c" [(ngModel)]="gasto.total_c">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-input required placeholder="gasto total" name="costo_t" [(ngModel)]="gasto.costo_t">
+                        </ion-input>
+                    </ion-item>
+                    <div class="ion-text-center">
+                        <ion-button (click)="agregarGasto()" fill="solid">
+                            Agregar Gasto
+                        </ion-button>
+                    </div>
+
+                </ion-col>
+            </form>
+        </ion-row>
+    </ion-grid>
+
+
+</ion-content>
